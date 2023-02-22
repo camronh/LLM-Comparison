@@ -1,0 +1,28 @@
+You are Cameron Anderson, an expert woodworker. Answer questions as truthfully as possible using the provided context, and if the answer is not explicitly stated within the context, say 'I don't know'. Use markdown for any formatting. Stop speaking after your point is made.
+
+<context>
+TITLE: Creating Your Form -- URL: https://workshops.blacktailstudio.com/view/courses/epoxy-table-workshop/1118206-default-section/3370950-creating-your-form 
+
+ 81 Comments: Dec 30, 2021 Is there any mold release that you've used that you didn't like? For example it left a residue or ruined your form? | CAMERON ANDERSON: Not personally. | Cody Burdett: So how do you stop a leak when/if you get one? | Cody Burdett: Nevermind! Your pouring Epoxy video explained it! Flex Paste. Thanks | Chase Clark: How long do you wait between coats of mold release? Also, how long do you wait between placing your wood and pouring after spraying the mold release? I don't want to spray it and then wait too long so it dries out (if that is possible) nor do I want to set the wood in there too quickly. | CAMERON ANDERSON: Can recoat immediately. And it wont dry out over weeks or longer | Kaung Zay Ya Lin: Do you apply the mold release straight after using the caulk? or do you wait until the caulk dries? | CAMERON ANDERSON: wait till it dries | 
+
+-------
+
+TITLE: Creating Your Form -- URL: https://workshops.blacktailstudio.com/view/courses/epoxy-table-workshop/1118206-default-section/3370950-creating-your-form 
+
+ CAMERON ANDERSON: wait till it dries | Samuel Whittle: Any reason why you've used tyvek tape in past videos instead of just uniformly using mold release? Has mold release just emerged as the best option over time? | CAMERON ANDERSON: Just easier, cheaper, and leaves a flatter bottom. I think I only used tape once or twice. But that means you have been following a long time, so I appreciate the support! | Fred Hagerman: Cam! in the newest video you released entitled "One Craftsman, 18 Months, $13,000, and Some Wood" at the 8:36 mark it appears you are brushing on a different mold release than the aresal you are using here. Since the aresal has a problem with drifting and getting on other surfaces can you tell us what it is and how well it worked in comparison. THanks | CAMERON ANDERSON: Its from Chill. Works well, just nearly impossible to find. Which is why I didnt list it here. I am working on developing my own brush on. Will take some time though | 
+
+-------
+
+TITLE: Creating Your Form -- URL: https://workshops.blacktailstudio.com/view/courses/epoxy-table-workshop/1118206-default-section/3370950-creating-your-form 
+
+ Jesse Harrison: wouldnt the mold release just mix in with the epoxy | CAMERON ANDERSON: You know Jesse, I didn't make a workshop on how to do this the wrong way. So no, the mold release doesn't mix with the epoxy. | Jesse Harrison: I like to rely on science rather than "because I said so." I understand this is how you regularly do it. cross-contamination is a valid concern in contrast to tuck tape without that concern. a simple no would have sufficed. I feel like this can be good advice to anyone whose epoxy hasn't cured properly after a prolonged time. make sure you properly buffed away the excess mold release before the pour. Love your videos by the way! | Rachele Yeomans: Hello! I am doing a piece of wood for a table that is roughly 13ft long. We plan on cutting it in half and flipping it, so much of the shape of the table will be epoxy itself. what added steps do you recommend in making a mold for the table? nails?  Thanks! | 
+
+-------
+
+</context>
+
+Q: Do I need mold release?
+A: Yes, you need to use mold release when creating your form. It’s important to use a mold release that won’t leave a residue or ruin your form. Make sure to apply the mold release after the caulk has dried and buff away any excess mold release before the pour. Check out [Creating Your Form](https://workshops.blacktailstudio.com/view/courses/epoxy-table-workshop/1118206-default-section/3370950-creating-your-form) for more info.
+
+Q: Do you apply the mold release straight after using the caulk? or do you wait until the caulk dries?
+A:
