@@ -1,0 +1,147 @@
+Answer the question as truthfully as possible using the provided text, and if the answer is not contained within the text below, say 'I don't know'. Use markdown for any formatting. Include relevant links and explain your reasoning when possible.
+
+<context>
+TITLE: https://github.com/api3dao/airnode/blob/master/packages/airnode-admin/src/implementation.ts -- URL: https://github.com/api3dao/airnode/blob/master/packages/airnode-admin/src/implementation.ts#L135
+
+export const deriveAirnodeXpub = (airnodeMnemonic: string): string => {
+  const airnodeHdNode = ethers.utils.HDNode.fromMnemonic(airnodeMnemonic).derivePath("m/44'/60'/0'");
+  return airnodeHdNode.neuter().extendedKey;
+};
+
+export const verifyAirnodeXpub = (airnodeXpub: string, airnodeAddress: string): ethers.utils.HDNode => {
+  // The xpub is expected to belong to the hardened path m/44'/60'/0'
+  // so we must derive the child default derivation path m/44'/60'/0'/0/0
+  // to compare it and check if xpub belongs to the Airnode wallet
+  const hdNode = ethers.utils.HDNode.fromExtendedKey(airnodeXpub);
+  if (airnodeAddress !== hdNode.derivePath('0/0').address) {
+    throw new Error(`xpub does not belong to Airnode: ${airnodeAddress}`);
+  }
+  return hdNode;
+};
+
+export function deriveSponsorWalletAddress(airnodeXpub: string, airnodeAddress: string, sponsorAddress: string) {
+  const hdNode = verifyAirnodeXpub(airnodeXpub, airnodeAddress);
+
+
+-------
+
+TITLE: https://github.com/api3dao/airnode/blob/master/packages/airnode-deployer/src/utils/evm.ts -- URL: https://github.com/api3dao/airnode/blob/master/packages/airnode-deployer/src/utils/evm.ts#L1
+
+
+import * as ethers from 'ethers';
+import * as logger from '../utils/logger';
+
+export function deriveAirnodeAddress(mnemonic: string) {
+  logger.debug('Deriving airnode wallet from mnemonic');
+  const airnodeWallet = ethers.Wallet.fromMnemonic(mnemonic);
+  return airnodeWallet.address;
+}
+
+export function deriveAirnodeXpub(mnemonic: string) {
+  logger.debug('Deriving Airnode xpub from mnemonic');
+  const airnodeHdNode = ethers.utils.HDNode.fromMnemonic(mnemonic).derivePath("m/44'/60'/0'");
+  return airnodeHdNode.neuter().extendedKey;
+}
+
+
+
+-------
+
+TITLE: Airnode | Documentation -- URL: https://docs.api3.org/airnode/v0.10/concepts/airnode.html#L55
+
+
+Use the admin CLI commandderive-airnode-xpub to get the `xpub` of an Airnode by passing the same mnemonic used to create the`airnodeAddress`.
+
+```
+npx @api3/airnode-admin derive-airnode-xpub \
+--airnode-mnemonic "cricket elephant ..."
+
+# outputs
+Airnode xpub: xpub6CUGRUo...
+
+```
+
+1 
+2 
+3 
+4 
+5 
+
+## # Admin CLI: `generate-airnode-mnemonic`
+
+Thegenerate-airnode-mnemoniccommand is useful because it will generate a mnemonic as well as return the`airnodeAddress` and `xpub`.
+
+```
+npx @api3/airnode-admin generate-airnode-mnemonic
+
+# output
+This mnemonic is created locally on your machine using "ethers.Wallet.createRandom" under the hood.
+Make sure to back it up securely, e.g., by writing it down on a piece of paper:
+
+############################## MNEMONIC ###############################
+
+cricket elephant ...
+
+############################## MNEMONIC ###############################
+
+The Airnode address for this mnemonic is: 0xaBd9...
+The Airnode xpub for this mnemonic is: xpub6CUGRUo...
+
+```
+
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 
+11 
+12 
+13 
+14 
+
+## # Verification
+
+The `xpub` that the Airnode owner has announced is not verified on-chain. A sponsor can verify the `xpub` off-chain. Use the admin CLI commandverify-xpub command from the admin CLI.
+
+```
+npx @api3/airnode-admin verify-airnode-xpub \
+--airnode-xpub xpub6CUGRUo... \
+--airnode-address 0xaBd9...
+
+# output
+Airnode xpub is: VALID
+
+```
+
+1 
+2 
+3 
+4 
+5 
+6 
+
+Last Updated: 9/9/2022, 4:38:08 PM
+
+ ← Request-Response Protocol Endpoint →
+
+
+-------
+
+</context>
+
+Q: Is there a way to derive the sponsor wallet using the SDK?
+A: You can use the `deriveSponsorWallet` function in the [@airnode/airnode-admin](https://docs.api3.org/airnode/v0.10/) package in Node.js like this:
+
+```js
+const sponsorWalletAddress = await deriveSponsorWalletAddress(airnodeXpub, airnodeWallet.address, sponsor.address);
+```
+
+This will derive the sponsor wallet address from the Airnode xpub, the Airnode wallet address and the sponsor address.
+
+Q: How do I derive an xpub in nodejs?
+A:
